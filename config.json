@@ -1,0 +1,19 @@
+{
+  "autoprefixer": {
+    "browsers": ["last 2 versions", "ie >=9", "iOS >=6", "Android >= 2.3"]
+  },
+  "directories": {
+    "src": "src/",
+    "dist": "dist/"
+  },
+  "htmlmin": {
+    "collapseWhitespace": true
+  },
+  "imagemin": {
+    "progressive": true
+  },
+  "ports": {
+    "livereload": 35729,
+    "express": 4000
+  }
+}
