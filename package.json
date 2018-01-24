@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/rejas/gulp-build-script.git"
   },
+  "bin": {
+    "neo-scripts": "./bin/index.js"
+  },
   "browserify": {
     "transform": [
       "babelify"
