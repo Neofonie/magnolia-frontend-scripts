@@ -1,0 +1,9 @@
+// Gulp-inject will add @import statements for all existing stylesheets here.
+// The order of the imports is defined by the order of the styles sources in gulp/config.js.
+
+// inject:scss
+// endinject
+
+body{
+	color: red;
+}
