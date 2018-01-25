@@ -4,7 +4,7 @@ import {reload} from '../utils/utils';
 
 const index = () => {
     return gulp
-        .src(config.views.mainSrc)
+        .src(config.views.mainSrc, {allowEmpty: true})
         .pipe(gulp.dest(config.views.dest))
         .pipe(reload());
 };

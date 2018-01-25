@@ -1,3 +1,7 @@
+const gulp = require('gulp'),
+    check = require('./tasks/check');
+
+/*
 import gulp from 'gulp';
 import minimist from 'minimist';
 import build from './tasks/build';
@@ -24,3 +28,11 @@ gulp.task('watch', watch);
 // gulp.task('start', gulp.parallel(start, watch));
 gulp.task('tests', tests);
 gulp.task('svg', svg);
+*/
+
+gulp.task('check', check);
+
+gulp.task('default', gulp.series(function(cb) {
+    console.log("running default task");
+    cb();
+}, check));

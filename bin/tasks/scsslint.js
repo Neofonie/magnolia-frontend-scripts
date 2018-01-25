@@ -1,15 +1,13 @@
-import gulp from 'gulp';
-import config from '../config';
-import sassLint from 'gulp-sass-lint';
+const gulp = require('gulp'),
+    sassLint = require('gulp-sass-lint'),
+    config = require('../config');
 
-const scsslint = () => {
+module.exports = () => {
     return gulp
-        .src(config.styles.src)
+        .src(config.styles.src, {allowEmpty: true})
         .pipe(sassLint({
             configFile: '.sasslintrc'
         }))
         .pipe(sassLint.format())
         .pipe(sassLint.failOnError());
 };
-
-export default scsslint;

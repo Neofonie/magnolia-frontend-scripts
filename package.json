@@ -11,8 +11,7 @@
     "neo-scripts": "./bin/neo.js"
   },
   "scripts": {
-    "b": "gulp",
-    "g2": "node  --experimental-modules ./node_modules/gulp/bin/gulp.js"
+    "gulp": "node ./node_modules/gulp/bin/gulp.js"
   },
   "browserify": {
     "transform": [

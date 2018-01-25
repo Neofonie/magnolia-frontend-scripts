@@ -15,10 +15,10 @@ const sassOptionsDevelopment = {
     };
 
 const styles = () => {
-    const orderedStyleFiles = gulp.src(config.styles.src, {read: false})
+    const orderedStyleFiles = gulp.src(config.styles.src, {allowEmpty: true, read: false})
         .pipe(gulpPlugins.order(config.styles.src, {base: config.basePaths.root}));
 
-    return gulp.src(config.styles.mainSrc)
+    return gulp.src(config.styles.mainSrc, {allowEmpty: true})
         .pipe(gulpPlugins.inject(orderedStyleFiles, {
             starttag: '// inject:{{ext}}',
             endtag: '// endinject',

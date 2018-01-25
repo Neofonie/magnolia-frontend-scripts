@@ -1,11 +1,9 @@
-import gulp from 'gulp';
-import gulpPlugins from '../utils/gulpPlugins';
+const gulp = require('gulp'),
+    gulpPlugins = require('../utils/gulpPlugins');
 
-const eslint = () => {
+module.exports = () => {
     return gulp
         .src('./gulp/**/*.js')
         .pipe(gulpPlugins.eslint())
         .pipe(gulpPlugins.eslint.format());
 };
-
-export default eslint;

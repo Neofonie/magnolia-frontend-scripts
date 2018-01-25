@@ -1,6 +1,6 @@
-import gulpLoadPlugins from 'gulp-load-plugins';
+const gulpLoadPlugins = require('gulp-load-plugins');
 
-export default gulpLoadPlugins({
+module.exports = gulpLoadPlugins({
     pattern: ['gulp-*', 'gulp.*'],
     replaceString: /\bgulp[-.]/
 });

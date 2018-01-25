@@ -1,10 +1,10 @@
-import gulp from 'gulp';
-import eslint from './eslint';
-import scsslint from './scsslint';
+const gulp = require('gulp'),
+    eslint = require('./eslint'),
+    scsslint = require('./scsslint');
 
-const check = gulp.series(
+const check = gulp.parallel(
     eslint,
     scsslint
 );
 
-export default check;
+module.exports = check;
