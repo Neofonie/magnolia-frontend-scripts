@@ -1,7 +1,7 @@
-import _browserSync from 'browser-sync';
+const browserSync = require('browser-sync');
 
-const browserSync = (done) => {
-    _browserSync.init(null, {
+module.exports = (done) => {
+    browserSync.init(null, {
         proxy: 'localhost:3000',
         browser: 'google chrome',
         port: 7000,
@@ -9,5 +9,3 @@ const browserSync = (done) => {
     });
     done();
 };
-
-export default browserSync;

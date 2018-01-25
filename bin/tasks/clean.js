@@ -1,5 +1,5 @@
-import del from 'del';
-import config from '../config';
+const del   = require('del'),
+    config  = require('../config');
 
 const cleanAll = () => {
     return del([config.basePaths.dist]);
@@ -9,4 +9,4 @@ const cleanStyles = () => {
     return del([config.styles.dest]);
 };
 
-export { cleanAll, cleanStyles };
+module.exports = { cleanAll, cleanStyles };

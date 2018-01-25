@@ -1,9 +1,9 @@
-import gulp     from 'gulp';
-import babel    from 'gulp-babel';
-import nodemon  from 'gulp-nodemon';
-import flog     from 'fancy-log';
-import config   from '../config';
-import {reload} from '../utils/utils';
+const gulp      = require('gulp'),
+    babel       = require('gulp-babel'),
+    nodemon     = require('gulp-nodemon'),
+    flog        = require('fancy-log'),
+    config      = require('../config'),
+    { reload }  = require('../utils/utils');
 
 const server = () => {
     flog.info('compile server', config.server.src);
@@ -38,6 +38,7 @@ const start = (done) => {
                 started = true;
             }
         });
+    done();
 };
 
-export {server, start};
+module.exports = { server, start };

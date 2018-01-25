@@ -1,14 +1,12 @@
-import gulp from 'gulp';
-import config from '../config';
-import gulpPlugins from '../utils/gulpPlugins';
-import tapColorize from 'tap-colorize';
+const gulp      = require('gulp'),
+    config      = require('../config'),
+    gulpPlugins = require('../utils/gulpPlugins'),
+    tapColorize = require('tap-colorize');
 
-const tests = () => {
+module.exports = () => {
     return gulp
         .src(config.tests.src)
         .pipe(gulpPlugins.tape({
             reporter: tapColorize()
         }));
 };
-
-export default tests;

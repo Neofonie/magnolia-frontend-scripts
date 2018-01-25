@@ -1,13 +1,13 @@
-import gulp         from 'gulp';
-import babelify     from 'babelify';
-import browserify   from 'browserify';
-import source       from 'vinyl-source-stream';
-import stringify    from 'stringify';
-import config       from '../config';
-import gulpPlugins  from '../utils/gulpPlugins';
-import {handleError, noop, reload}  from '../utils/utils';
+const gulp      = require('gulp'),
+    babelify    = require('babelify'),
+    browserify  = require('browserify'),
+    stringify   = require('stringify'),
+    source      = require('vinyl-source-stream'),
+    config      = require('../config'),
+    gulpPlugins = require('../utils/gulpPlugins'),
+    { handleError, noop, reload } = require('../utils/utils');
 
-const scripts = (done) => {
+module.exports = (done) => {
     return browserify(config.scripts.mainSrc,
         {
             debug: global.env.environment !== 'production'
@@ -30,5 +30,3 @@ const scripts = (done) => {
         .pipe(gulp.dest(config.scripts.dest))
         .pipe(reload());
 };
-
-export default scripts;

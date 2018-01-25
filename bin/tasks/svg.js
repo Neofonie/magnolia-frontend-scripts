@@ -1,9 +1,9 @@
-import gulp from 'gulp';
-import config from '../config';
-import gulpPlugins from '../utils/gulpPlugins';
-import {handleError} from '../utils/utils';
+const gulp      = require('gulp'),
+    config      = require('../config'),
+    gulpPlugins = require('../utils/gulpPlugins'),
+    {handleError} = require('../utils/utils');
 
-const svg = () => {
+module.exports = () => {
     return gulp
         .src(config.svg.src)
         .pipe(gulpPlugins.svgmin())
@@ -12,5 +12,3 @@ const svg = () => {
         .on('error', handleError)
         .pipe(gulp.dest(config.svg.dest));
 };
-
-export default svg;

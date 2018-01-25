@@ -1,7 +1,7 @@
-import gulp from 'gulp';
-import config from '../config';
-import {noop, reload} from '../utils/utils';
-import gulpPlugins from '../utils/gulpPlugins';
+const gulp      = require('gulp'),
+    config      = require('../config'),
+    gulpPlugins = require('../utils/gulpPlugins'),
+    { noop, reload } = require('../utils/utils');
 
 const sassOptionsDevelopment = {
         errLogToConsole: true,
@@ -14,7 +14,7 @@ const sassOptionsDevelopment = {
         sourceComments: false
     };
 
-const styles = () => {
+module.exports = () => {
     const orderedStyleFiles = gulp.src(config.styles.src, {allowEmpty: true, read: false})
         .pipe(gulpPlugins.order(config.styles.src, {base: config.basePaths.root}));
 
@@ -36,5 +36,3 @@ const styles = () => {
         .pipe(gulp.dest(config.styles.dest))
         .pipe(reload());
 };
-
-export default styles;

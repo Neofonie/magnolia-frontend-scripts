@@ -1,16 +1,18 @@
-import gulp from 'gulp';
-import {cleanStyles } from './clean';
-import config from '../config';
-import {copyMagnoliaWebresources, copyMagnoliaLight, copyFonts} from './copy';
-import eslint from './eslint';
-import images from './images';
-import scripts from './scripts';
-import {server} from './server';
-import styles from './styles';
-import tests from './tests';
-import {views, index} from './views';
+const gulp      = require('gulp'),
+    config      = require('../config'),
+    eslint      = require('./eslint'),
+    images      = require('./images'),
+    scripts     = require('./scripts'),
+    styles      = require('./styles'),
+    tests       = require('./tests'),
+    { copyMagnoliaWebresources, copyMagnoliaLight, copyFonts }
+                        = require('./copy'),
+    { cleanStyles }     = require('./clean'),
+    { server }          = require('./server'),
+    { views, index }    = require('./views');
 
-const watch = (done) => {
+// TODO add gulp.parallel
+module.exports = (done) => {
     gulp.watch(config.styles.src, gulp.series(cleanStyles, styles, index, copyMagnoliaWebresources));
     gulp.watch(config.scripts.src, gulp.series(eslint, scripts, copyMagnoliaWebresources));
     gulp.watch(config.images.src, images, copyMagnoliaWebresources);
@@ -23,5 +25,3 @@ const watch = (done) => {
     gulp.watch(config.fonts.src, copyFonts);
     done();
 };
-
-export default watch;

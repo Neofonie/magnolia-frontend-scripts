@@ -1,16 +1,17 @@
-import gulp from 'gulp';
-import styles from './styles';
-import { cleanAll } from './clean';
-import scripts from './scripts';
-import {server} from './server';
-import {index, views} from './views';
-import check from './check';
-import tests from './tests';
-import images from './images';
-import { copyMagnoliaWebresources, copyMagnoliaLight, copyFonts } from './copy';
-import svg from './svg';
+const gulp          = require('gulp'),
+    styles          = require('./styles'),
+    scripts         = require('./scripts'),
+    check           = require('./check'),
+    tests           = require('./tests'),
+    images          = require('./images'),
+    svg             = require ('./svg'),
+    { copyMagnoliaWebresources, copyMagnoliaLight, copyFonts }
+                        = require ('./copy'),
+    { cleanAll }        = require('./clean'),
+    { index, views }    = require('./views'),
+    { server }          = require('./server');
 
-const build = gulp.series(
+module.exports = gulp.series(
     check,
     tests,
     cleanAll,
@@ -21,5 +22,3 @@ const build = gulp.series(
     copyMagnoliaLight,
     copyFonts
 );
-
-export default build;

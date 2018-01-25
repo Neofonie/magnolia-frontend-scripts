@@ -1,6 +1,6 @@
-import browserSync  from 'browser-sync';
-import flog         from 'fancy-log';
-import through2     from 'through2';
+const browserSync   = require('browser-sync'),
+    flog            = require('fancy-log'),
+    through2        = require('through2');
 
 const letItCrash = (error) => {
     throw error;
@@ -36,8 +36,7 @@ const reload = () => {
     if (browserSync.active) {
         return browserSync.reload({stream: true});
     }
-
     return noop();
 };
 
-export { handleError, noop, reload };
+module.exports = { handleError, noop, reload };

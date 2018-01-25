@@ -1,6 +1,6 @@
-import gulp from 'gulp';
-import config from '../config';
-import {reload} from '../utils/utils';
+const gulp      = require('gulp'),
+    config      = require('../config'),
+    { reload }  = require('../utils/utils');
 
 const index = () => {
     return gulp
@@ -15,4 +15,4 @@ const views = () => {
         .pipe(gulp.dest(config.views.dest));
 };
 
-export {views, index};
+module.exports = { views, index };
