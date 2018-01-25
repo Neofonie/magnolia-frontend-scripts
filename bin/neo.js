@@ -14,10 +14,10 @@ if (major < 6) {
 }
 
 const task = process.argv.length > 1 ? process.argv[2] : undefined;
-console.log('[neo-script] Start running task: ' + task);
+console.log('[neo-script] Starting task: ' + task);
 
 const gtasks = require('./index');
 gtasks.series(task, function (done) {
-    console.log('[neo-script] Done running task: ' + task);
+    console.log('[neo-script] Finished task: ' + task);
     done();
 })();

@@ -2,3 +2,8 @@
 body {
   color: red;
 }
+
+/* line 9, src/client/neo-app.scss */
+body a {
+  color: green;
+}

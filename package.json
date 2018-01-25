@@ -11,11 +11,9 @@
     "neo-scripts": "./bin/neo.js"
   },
   "scripts": {
-    "gulp": "node ./node_modules/gulp/bin/gulp.js",
     "build": "node ./bin/neo.js build",
-    "check": "node ./bin/neo.js check",
-    "svg": "node ./bin/neo.js svg",
-    "test": "node ./bin/neo.js test"
+    "default": "node ./bin/neo.js default",
+    "gulp": "node ./node_modules/gulp/bin/gulp.js"
   },
   "browserify": {
     "transform": [
@@ -27,7 +25,7 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
-    "browser-sync": "^2.23.5",
+    "browser-sync": "^2.23.6",
     "browserify": "^15.2.0",
     "debug": "^3.1.0",
     "del": "^3.0.0",
