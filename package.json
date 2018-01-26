@@ -1,14 +1,21 @@
 {
-  "name": "gulp-build-script",
+  "name": "magnolia-frontend-scripts",
   "version": "0.0.1",
-  "description": "gulp build script",
-  "license": "MIT",
+  "description": "collection of gulp-scripts for building magnolia frontends",
+  "license": "UNLICENSED",
+  "private": true,
+  "author": "Veeck",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rejas/gulp-build-script.git"
+    "url": "git+https://github.com/rejas/magnolia-frontend-scripts.git"
   },
+  "keywords": [
+    "magnolia",
+    "gulp",
+    "frontend"
+  ],
   "bin": {
-    "neo-scripts": "./bin/neo.js"
+    "neo-mfs": "./bin/neo-mfs.js"
   },
   "scripts": {
     "build": "node ./bin/neo.js build",
