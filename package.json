@@ -7,7 +7,10 @@
   "author": "Veeck",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rejas/magnolia-frontend-scripts.git"
+    "url": "git+https://github.com/neofonie/magnolia-frontend-scripts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neofonie/magnolia-frontend-scripts/issues"
   },
   "keywords": [
     "magnolia",
@@ -18,8 +21,9 @@
     "neo-mfs": "./bin/neo-mfs.js"
   },
   "scripts": {
-    "build": "node ./bin/neo.js build",
-    "default": "node ./bin/neo.js default"
+    "build": "node ./bin/neo-mfs.js build",
+    "check": "node ./bin/neo-mfs.js check",
+    "default": "node ./bin/neo-mfs.js default"
   },
   "browserify": {
     "transform": [

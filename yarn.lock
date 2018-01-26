@@ -3514,8 +3514,8 @@ global-prefix@^1.0.1:
     which "^1.2.14"
 
 globals@^11.0.1:
-  version "11.1.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-11.1.0.tgz#632644457f5f0e3ae711807183700ebf2e4633e4"
+  version "11.2.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-11.2.0.tgz#aa2ece052a787563ba70a3dcd9dc2eb8a9a0488c"
 
 globals@^9.18.0, globals@^9.2.0:
   version "9.18.0"
@@ -4959,10 +4959,6 @@ kind-of@^5.0.0, kind-of@^5.0.2:
 kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
-
-knockout@^3.4.2:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/knockout/-/knockout-3.4.2.tgz#e87958de77ad1e936f7ce645bab8b5d7c456d937"
 
 known-css-properties@^0.3.0:
   version "0.3.0"
@@ -6634,8 +6630,8 @@ regexpu-core@^2.0.0:
     regjsparser "^0.1.4"
 
 registry-auth-token@^3.0.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/registry-auth-token/-/registry-auth-token-3.3.1.tgz#fb0d3289ee0d9ada2cbb52af5dfe66cb070d3006"
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/registry-auth-token/-/registry-auth-token-3.3.2.tgz#851fd49038eecb586911115af845260eec983f20"
   dependencies:
     rc "^1.1.6"
     safe-buffer "^5.0.1"
