@@ -52,7 +52,6 @@
     "gulp-uglify": "^3.0.0",
     "hbs": "^4.0.1",
     "hbs-utils": "0.0.4",
-    "knockout": "^3.4.2",
     "minimist": "^1.2.0",
     "stringify": "^5.2.0",
     "tap-colorize": "^1.2.0",

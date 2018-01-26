@@ -6,4 +6,3 @@ module.exports = gulp.parallel(
     eslint,
     scsslint
 );
-

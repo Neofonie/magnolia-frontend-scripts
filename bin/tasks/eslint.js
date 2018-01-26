@@ -1,9 +1,12 @@
 const gulp      = require('gulp'),
+    config      = require('../config'),
     gulpPlugins = require('../utils/gulpPlugins');
 
-module.exports = () => {
+const eslint = () => {
     return gulp
-        .src('./gulp/**/*.js')
+        .src(config.scripts.src)
         .pipe(gulpPlugins.eslint())
         .pipe(gulpPlugins.eslint.format());
 };
+
+module.exports = eslint;
