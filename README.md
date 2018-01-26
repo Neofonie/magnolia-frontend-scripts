@@ -1,1 +1,1 @@
-# gulp-build-script
+# magnolia-frontend-scripts
