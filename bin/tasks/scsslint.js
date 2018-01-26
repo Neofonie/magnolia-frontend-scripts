@@ -2,7 +2,7 @@ const gulp = require('gulp'),
     sassLint = require('gulp-sass-lint'),
     config = require('../config');
 
-module.exports = () => {
+const scss = () => {
     return gulp
         .src(config.styles.src, {allowEmpty: true})
         .pipe(sassLint({
@@ -11,3 +11,5 @@ module.exports = () => {
         .pipe(sassLint.format())
         .pipe(sassLint.failOnError());
 };
+
+module.exports = scss;

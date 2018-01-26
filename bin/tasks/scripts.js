@@ -7,7 +7,7 @@ const gulp      = require('gulp'),
     gulpPlugins = require('../utils/gulpPlugins'),
     { handleError, noop, reload } = require('../utils/utils');
 
-module.exports = (done) => {
+const scripts = (done) => {
     return browserify(config.scripts.mainSrc,
         {
             debug: global.env.environment !== 'production'
@@ -30,3 +30,5 @@ module.exports = (done) => {
         .pipe(gulp.dest(config.scripts.dest))
         .pipe(reload());
 };
+
+module.exports = scripts;

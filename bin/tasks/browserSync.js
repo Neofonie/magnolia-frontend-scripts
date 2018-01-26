@@ -1,6 +1,6 @@
 const browserSync = require('browser-sync');
 
-module.exports = (done) => {
+const sync = (done) => {
     browserSync.init(null, {
         proxy: 'localhost:3000',
         browser: 'google chrome',
@@ -9,3 +9,5 @@ module.exports = (done) => {
     });
     done();
 };
+
+module.exports = sync;

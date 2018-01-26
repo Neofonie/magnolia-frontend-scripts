@@ -106,7 +106,7 @@ const config = {
     },
 
     views: {
-        mainSrc: `${basePaths.srcServer}/views/layout.hbs`,
+        mainSrc: `${basePaths.srcServer}/views/layouts/default.hbs`,
         src: [
             `${basePaths.srcServer}/views/**/*`
         ],

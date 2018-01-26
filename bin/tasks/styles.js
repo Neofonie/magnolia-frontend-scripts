@@ -14,7 +14,7 @@ const sassOptionsDevelopment = {
         sourceComments: false
     };
 
-module.exports = () => {
+const styles = () => {
     const orderedStyleFiles = gulp.src(config.styles.src, {allowEmpty: true, read: false})
         .pipe(gulpPlugins.order(config.styles.src, {base: config.basePaths.root}));
 
@@ -36,3 +36,5 @@ module.exports = () => {
         .pipe(gulp.dest(config.styles.dest))
         .pipe(reload());
 };
+
+module.exports = styles;

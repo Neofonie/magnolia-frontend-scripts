@@ -12,19 +12,15 @@ global.env = minimist(process.argv);
 
 gulp.task('build', build);
 gulp.task('check', check);
-gulp.task('svg', svg);
-gulp.task('test', test);
+gulp.task('svg',   svg);
+gulp.task('test',  test);
 gulp.task('watch', watch);
 
 gulp.task('default', gulp.series(
     build,
     start,
     watch,
-    browsersync,
-    function(cb) {
-        console.log("running default task");
-        cb();
-    }
+    browsersync
 ));
 
 module.exports = gulp;

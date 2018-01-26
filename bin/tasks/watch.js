@@ -12,7 +12,7 @@ const gulp      = require('gulp'),
     { views, index }    = require('./views');
 
 // TODO add gulp.parallel
-module.exports = (done) => {
+const watch = (done) => {
     gulp.watch(config.styles.src, gulp.series(cleanStyles, styles, index, copyMagnoliaWebresources));
     gulp.watch(config.scripts.src, gulp.series(eslint, scripts, copyMagnoliaWebresources));
     gulp.watch(config.images.src, images, copyMagnoliaWebresources);
@@ -25,3 +25,5 @@ module.exports = (done) => {
     gulp.watch(config.fonts.src, copyFonts);
     done();
 };
+
+module.exports = watch;

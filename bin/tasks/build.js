@@ -11,7 +11,7 @@ const gulp          = require('gulp'),
     { index, views }    = require('./views'),
     { server }          = require('./server');
 
-module.exports = gulp.series(
+const build = gulp.series(
     check,
     tests,
     cleanAll,
@@ -22,3 +22,5 @@ module.exports = gulp.series(
     copyMagnoliaLight,
     copyFonts
 );
+
+module.exports = build;

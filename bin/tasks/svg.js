@@ -3,7 +3,7 @@ const gulp      = require('gulp'),
     gulpPlugins = require('../utils/gulpPlugins'),
     { handleError } = require('../utils/utils');
 
-module.exports = () => {
+const svg = () => {
     return gulp
         .src(config.svg.src)
         .pipe(gulpPlugins.svgmin())
@@ -12,3 +12,5 @@ module.exports = () => {
         .on('error', handleError)
         .pipe(gulp.dest(config.svg.dest));
 };
+
+module.exports = svg;

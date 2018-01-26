@@ -3,10 +3,12 @@ const gulp      = require('gulp'),
     gulpPlugins = require('../utils/gulpPlugins'),
     tapColorize = require('tap-colorize');
 
-module.exports = () => {
+const tests = () => {
     return gulp
         .src(config.tests.src)
         .pipe(gulpPlugins.tape({
             reporter: tapColorize()
         }));
 };
+
+module.exports = tests;

@@ -12,8 +12,7 @@
   },
   "scripts": {
     "build": "node ./bin/neo.js build",
-    "default": "node ./bin/neo.js default",
-    "gulp": "node ./node_modules/gulp/bin/gulp.js"
+    "default": "node ./bin/neo.js default"
   },
   "browserify": {
     "transform": [
