@@ -10,6 +10,9 @@ const basePaths = {
     distTargetMagnolia: '../../bechtle-webapp/target/cmsauthor/modules/bechtle-ui'
 };
 
+let projectPaths = require ('../../../projectPaths');
+Object.assign(basePaths, projectPaths);
+
 const config = {
 
     autoprefixer: {
