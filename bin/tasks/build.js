@@ -19,8 +19,7 @@ const build = gulp.series(
     scripts,
     index,
     copyMagnoliaWebresources,
-    copyMagnoliaLight,
-    copyFonts
+    copyMagnoliaLight
 );
 
 module.exports = build;

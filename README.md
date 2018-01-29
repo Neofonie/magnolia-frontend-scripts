@@ -1,9 +1,23 @@
 # magnolia-frontend-scripts
 
-use like this in your package.json:
+- install with
 
-  "scripts": {
-    "build": "neo-scripts build",
-    "check": "neo-scripts check",
-    "default": "neo-scripts default"
-  },
+        yarn add magnolia-frontend-scripts 
+   
+    
+- use like this in your package.json:
+
+        "scripts": {
+           "build": "neo-mfs build",
+           "check": "neo-mfs check",
+           "default": "neo-mfs default"
+        }
+  
+    
+- make sure youre directory layout looks like this
+
+        - <project-name>
+            -> <name>-ui 
+                -> <name>-ui
+                -> frontend
+            -> <name>-webapp 

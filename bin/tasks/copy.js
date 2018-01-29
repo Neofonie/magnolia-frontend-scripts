@@ -1,6 +1,13 @@
 const gulp      = require('gulp'),
     config      = require('../config');
 
+// Copy fonts into webresources
+const copyFonts = () => {
+    return gulp
+        .src(config.fonts.src)
+        .pipe(gulp.dest(config.fonts.dest));
+};
+
 // Copy webresources from 'frontend/dist/web' to Magnolias light module.
 const copyMagnoliaWebresources = () => {
     return gulp
@@ -14,11 +21,4 @@ const copyMagnoliaLight = () => {
         .src(config.magnoliaLight.src)
         .pipe(gulp.dest(config.magnoliaLight.dest));
 };
-
-const copyFonts = () => {
-    return gulp
-        .src(config.fonts.src)
-        .pipe(gulp.dest(config.fonts.dest));
-};
-
-module.exports = { copyMagnoliaLight, copyMagnoliaWebresources, copyFonts };
+module.exports = { copyFonts, copyMagnoliaLight, copyMagnoliaWebresources };
