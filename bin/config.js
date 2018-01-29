@@ -49,7 +49,7 @@ const config = {
 
     magnoliaLight: {
         src: [
-            `${basePaths.distSrcUI}`
+            `${basePaths.distSrcUI}/**/*`
         ],
         dest: basePaths.distTargetMagnolia
     },
