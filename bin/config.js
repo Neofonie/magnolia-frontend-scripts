@@ -4,10 +4,7 @@ const basePaths = {
     srcClient: 'src/client',
     srcServer: 'src/server',
     dist: 'dist',
-    distPublic: 'dist/webresources',
-    distSrcUI: '../bechtle-ui/',
-    distSrcWeb: '../bechtle-ui/webresources',
-    distTargetMagnolia: '../../bechtle-webapp/target/cmsauthor/modules/bechtle-ui'
+    distPublic: 'dist/webresources'
 };
 
 let projectPaths = require ('../../../projectPaths');
