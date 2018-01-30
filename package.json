@@ -1,6 +1,6 @@
 {
   "name": "magnolia-frontend-scripts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "collection of gulp-scripts for building magnolia frontends",
   "license": "MIT",
   "author": "Veeck",
