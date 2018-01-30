@@ -2,8 +2,7 @@
   "name": "magnolia-frontend-scripts",
   "version": "0.1.0",
   "description": "collection of gulp-scripts for building magnolia frontends",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "MIT",
   "author": "Veeck",
   "repository": {
     "type": "git",
