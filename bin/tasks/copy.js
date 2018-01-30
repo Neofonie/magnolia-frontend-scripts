@@ -15,7 +15,7 @@ const copyMagnoliaWebresources = () => {
         .pipe(gulp.dest(config.magnoliaWebresources.dest));
 };
 
-// Copy the bechtle-ui folder to the bechtle-webapp folder.
+// Copy the ui folder to the webapp folder.
 const copyMagnoliaLight = () => {
     return gulp
         .src(config.magnoliaLight.src)
