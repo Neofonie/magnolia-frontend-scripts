@@ -21,4 +21,5 @@ const copyMagnoliaLight = () => {
         .src(config.magnoliaLight.src)
         .pipe(gulp.dest(config.magnoliaLight.dest));
 };
+
 module.exports = { copyFonts, copyMagnoliaLight, copyMagnoliaWebresources };
