@@ -3,26 +3,24 @@
 - install with:
 
         yarn add magnolia-frontend-scripts 
-   
-    
-- use like this in your package.json:
+
+- add this into your projects package.json:
 
         "scripts": {
            "build": "neo-mfs build",
            "check": "neo-mfs check",
            "default": "neo-mfs default"
         }
-  
-    
+
 - make sure your directory layout looks like this:
 
         - <project-name>
             -> <name>-ui 
                 -> <name>-ui
-                -> frontend
+                -> frontend (here is your package.json etc)
             -> <name>-webapp 
             
-- add correct path names to a file named "projectPath.js" in your frontend directory:
+- add correct path names to a file named ".projectrc" in your frontend directory:
 
         const basePaths = {
             root: '.',
@@ -37,3 +35,8 @@
         };
         
         module.exports = basePaths;
+
+- TODO 
+    - make more configurable
+    - log gulp output too
+    - ...

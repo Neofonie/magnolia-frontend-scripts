@@ -7,7 +7,7 @@ const basePaths = {
     distPublic: 'dist/webresources'
 };
 
-let projectPaths = require ('../../../projectPaths');
+let projectPaths = require ('../../../.projectrc');
 Object.assign(basePaths, projectPaths);
 
 const config = {
