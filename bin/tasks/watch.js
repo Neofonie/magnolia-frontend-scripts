@@ -3,6 +3,7 @@ const gulp      = require('gulp'),
     eslint      = require('./eslint'),
     images      = require('./images'),
     scripts     = require('./scripts'),
+    scsslint    = require('./scsslint'),
     styles      = require('./styles'),
     tests       = require('./tests'),
     { copyMagnoliaWebresources, copyMagnoliaLight, copyFonts }
