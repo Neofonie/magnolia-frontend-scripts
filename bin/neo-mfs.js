@@ -12,10 +12,10 @@ if (major < 6) {
 }
 
 const task = process.argv.length > 1 ? process.argv[2] : undefined;
-console.log('[neo-mfs] Starting task: ' + task);
+console.info('[neo-mfs] Starting task: ' + task);
 
 const gtasks = require('./index');
 gtasks.series(task, function (done) {
-    console.log('[neo-mfs] Finished task: ' + task);
+    console.info('[neo-mfs] Finished task: ' + task);
     done();
 })();
