@@ -1,6 +1,7 @@
 const gulp      = require('gulp'),
     config      = require('../config'),
     gulpPlugins = require('../utils/gulpPlugins'),
+    flog        = require('fancy-log'),
     { noop, reload } = require('../utils/utils');
 
 const sassOptionsDevelopment = {
@@ -15,6 +16,8 @@ const sassOptionsDevelopment = {
     };
 
 const styles = () => {
+    flog.info('compile styles');
+
     const orderedStyleFiles = gulp.src(config.styles.src, {allowEmpty: true, read: false})
         .pipe(gulpPlugins.order(config.styles.src, {base: config.basePaths.root}));
 

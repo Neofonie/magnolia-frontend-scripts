@@ -1,6 +1,7 @@
 const gulp      = require('gulp'),
     config      = require('../config'),
     eslint      = require('./eslint'),
+    flog        = require('fancy-log'),
     images      = require('./images'),
     scripts     = require('./scripts'),
     scsslint    = require('./scsslint'),
@@ -13,6 +14,8 @@ const gulp      = require('gulp'),
     { views, index }    = require('./views');
 
 const watch = (done) => {
+    flog.info('start watching');
+
     gulp.watch(config.fonts.src,            gulp.series(copyFonts));
     gulp.watch(config.images.src,           gulp.series(images, copyMagnoliaWebresources));
     gulp.watch(config.magnoliaLight.src,    gulp.series(copyMagnoliaLight));
