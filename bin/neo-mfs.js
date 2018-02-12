@@ -4,7 +4,7 @@ const currentNodeVersion = process.versions.node;
 const semver = currentNodeVersion.split('.');
 const major = semver[0];
 
-console.error('[neo-mfs] You are running Node ' + currentNodeVersion + '.');
+console.info('[neo-mfs] You are running Node ' + currentNodeVersion + '.');
 
 if (major < 6) {
     console.error('[neo-mfs] Please update your version of Node to 6 or higher.');
