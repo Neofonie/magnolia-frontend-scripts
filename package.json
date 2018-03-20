@@ -62,7 +62,7 @@
     "minimist": "^1.2.0",
     "stringify": "^5.2.0",
     "tap-colorize": "^1.2.0",
-    "tape": "^4.9.0",
+    "tape": "^4.8.0",
     "through2": "^2.0.3",
     "vinyl-source-stream": "^2.0.0"
   }
