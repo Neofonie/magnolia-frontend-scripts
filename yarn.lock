@@ -1404,8 +1404,8 @@ camelcase@^4.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
 caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000810, caniuse-lite@^1.0.30000815:
-  version "1.0.30000815"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000815.tgz#3a4258e6850362185adb11b0d754a48402d35bf6"
+  version "1.0.30000817"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000817.tgz#e993c380eb4bfe76a2aed4223f841c02d6e0d832"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -1736,21 +1736,13 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
-concat-stream@^1.4.6, concat-stream@^1.4.7, concat-stream@^1.6.0, concat-stream@~1.6.0:
+concat-stream@^1.4.6, concat-stream@^1.4.7, concat-stream@^1.6.0, concat-stream@^1.6.1, concat-stream@~1.6.0:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.6.1.tgz#261b8f518301f1d834e36342b9fea095d2620a26"
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
-
-concat-stream@~1.5.1:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-1.5.2.tgz#708978624d856af41a5a741defdd261da752c266"
-  dependencies:
-    inherits "~2.0.1"
-    readable-stream "~2.0.0"
-    typedarray "~0.0.5"
 
 concat-with-sourcemaps@^1.0.0:
   version "1.0.5"
@@ -2413,8 +2405,8 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.39:
-  version "1.3.39"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.39.tgz#d7a4696409ca0995e2750156da612c221afad84d"
+  version "1.3.40"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.40.tgz#1fbd6d97befd72b8a6f921dc38d22413d2f6fddf"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -3805,15 +3797,15 @@ gulp-svgstore@^6.1.1:
     plugin-error "^0.1.2"
     vinyl "^2.1.0"
 
-gulp-tape@^0.0.10:
+"gulp-tape@https://github.com/rejas/gulp-tape.git#issue_23":
   version "0.0.10"
-  resolved "https://registry.yarnpkg.com/gulp-tape/-/gulp-tape-0.0.10.tgz#9e8f765b431a90fb105cff1c473355d8ebddb8d1"
+  resolved "https://github.com/rejas/gulp-tape.git#97fb2120e5975af5e6a86d1ee849a44be0a6b8bc"
   dependencies:
     dargs "^5.1.0"
     fancy-log "^1.3.2"
     plugin-error "^1.0.1"
     tap-parser "^7.0.0"
-    through2 "^2.0.0"
+    through2 "^2.0.3"
 
 gulp-uglify@^3.0.0:
   version "3.0.0"
@@ -4308,12 +4300,12 @@ inquirer@^3.0.6:
     through "^2.3.6"
 
 insert-module-globals@^7.0.0:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/insert-module-globals/-/insert-module-globals-7.0.2.tgz#012c56baa7d3307a8b417d4ec5270cf9741c18f4"
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/insert-module-globals/-/insert-module-globals-7.0.3.tgz#991448ba496abd80b03efe7695a941b737287e6c"
   dependencies:
     JSONStream "^1.0.3"
     combine-source-map "~0.7.1"
-    concat-stream "~1.5.1"
+    concat-stream "^1.6.1"
     is-buffer "^1.1.0"
     lexical-scope "^1.2.0"
     process "~0.11.0"
@@ -4673,8 +4665,8 @@ is-unc-path@^1.0.0:
     unc-path-regex "^0.1.2"
 
 is-url@^1.2.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/is-url/-/is-url-1.2.2.tgz#498905a593bf47cc2d9e7f738372bbf7696c7f26"
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/is-url/-/is-url-1.2.3.tgz#42f6487f61795154b098246954412048f7ab120b"
 
 is-utf8@^0.2.0, is-utf8@^0.2.1:
   version "0.2.1"
@@ -5403,9 +5395,10 @@ minimist@~0.2.0:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.2.0.tgz#4dffe525dae2b864c66c2e23c6271d7afdecefce"
 
 minipass@^2.2.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.2.1.tgz#5ada97538b1027b4cf7213432428578cb564011f"
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.2.4.tgz#03c824d84551ec38a8d1bb5bc350a5a30a354a40"
   dependencies:
+    safe-buffer "^5.1.1"
     yallist "^3.0.0"
 
 mixin-deep@^1.2.0:
@@ -6184,7 +6177,7 @@ private@^0.1.6, private@^0.1.7:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
 
-process-nextick-args@^1.0.7, process-nextick-args@~1.0.6:
+process-nextick-args@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-1.0.7.tgz#150e20b756590ad3f91093f25a4f2ad8bff30ba3"
 
@@ -6391,17 +6384,6 @@ readable-stream@~1.1.10, readable-stream@~1.1.9:
     inherits "~2.0.1"
     isarray "0.0.1"
     string_decoder "~0.10.x"
-
-readable-stream@~2.0.0:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
-  dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "~1.0.0"
-    process-nextick-args "~1.0.6"
-    string_decoder "~0.10.x"
-    util-deprecate "~1.0.1"
 
 readdirp@^2.0.0:
   version "2.1.0"
@@ -7811,7 +7793,7 @@ type-is@~1.6.15, type-is@~1.6.16:
     media-typer "0.3.0"
     mime-types "~2.1.18"
 
-typedarray@^0.0.6, typedarray@~0.0.5:
+typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
