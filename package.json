@@ -55,7 +55,7 @@
     "gulp-sass-lint": "^1.3.4",
     "gulp-svgmin": "^1.2.4",
     "gulp-svgstore": "^6.1.1",
-    "gulp-tape": "https://github.com/rejas/gulp-tape.git#issue_23",
+    "gulp-tape": "^0.0.11",
     "gulp-uglify": "^3.0.0",
     "hbs": "^4.0.1",
     "hbs-utils": "^0.0.4",
