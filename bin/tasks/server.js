@@ -1,6 +1,6 @@
 const gulp      = require('gulp'),
-    babel       = require('gulp-babel'),
-    nodemon     = require('gulp-nodemon'),
+    gulpBabel   = require('gulp-babel'),
+    gulpNodemon = require('gulp-nodemon'),
     flog        = require('fancy-log'),
     config      = require('../config'),
     { reload }  = require('../utils/utils');
@@ -10,7 +10,7 @@ const server = () => {
 
     return gulp
         .src(config.server.src)
-        .pipe(babel())
+        .pipe(gulpBabel())
         .pipe(gulp.dest(config.server.dest))
         .pipe(reload());
 };
@@ -18,7 +18,7 @@ const server = () => {
 const start = (done) => {
     let started = false;
 
-    nodemon({
+    gulpNodemon({
         script: `${config.basePaths.dist}/server.js`,
         watch: `${config.basePaths.dist}/config`
     })
@@ -31,7 +31,7 @@ const start = (done) => {
                 started = true;
             }
         })
-        .on('restart', function (cb) {
+        .on('restart', function () {
             flog.info('nodemon restart');
             if (!started) {
                 done();

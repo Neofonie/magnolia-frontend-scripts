@@ -1,18 +1,18 @@
-const gulp      = require('gulp'),
-    config      = require('../config'),
-    flog        = require('fancy-log'),
-    sassLint    = require('gulp-sass-lint');
+const gulp          = require('gulp'),
+    gulpSassLint    = require('gulp-sass-lint'),
+    config          = require('../config'),
+    flog            = require('fancy-log');
 
 const scss = () => {
     flog.info('lint styles');
 
     return gulp
         .src(config.styles.src, {allowEmpty: true})
-        .pipe(sassLint({
+        .pipe(gulpSassLint({
             configFile: '.sasslintrc'
         }))
-        .pipe(sassLint.format())
-        .pipe(sassLint.failOnError());
+        .pipe(gulpSassLint.format())
+        .pipe(gulpSassLint.failOnError());
 };
 
 module.exports = scss;
