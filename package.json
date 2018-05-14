@@ -22,7 +22,7 @@
   "scripts": {
     "build": "node ./bin/neo-mfs.js build",
     "check": "node ./bin/neo-mfs.js check",
-    "default": "node ./bin/neo-mfs.js default"
+    "start": "node ./bin/neo-mfs.js default"
   },
   "browserify": {
     "transform": [

@@ -9,7 +9,7 @@
         "scripts": {
            "build": "neo-mfs build",
            "check": "neo-mfs check",
-           "default": "neo-mfs default"
+           "start": "neo-mfs default"
         }
 
 - make sure your directory layout looks like this:
