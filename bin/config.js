@@ -63,6 +63,11 @@ const config = {
         dest: `${basePaths.distPublic}/js`
     },
 
+    print: {
+        mainSrc: `${basePaths.srcClient}/neo-print.scss`,
+        dest: `${basePaths.distPublic}/css`
+    },
+
     server: {
         mainSrc: `${basePaths.srcServer}/server.js`,
         src: [
