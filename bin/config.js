@@ -54,6 +54,45 @@ const config = {
         dest: basePaths.distTargetMagnolia
     },
 
+    themes: {
+        paths: { // used by watcher
+            js: [
+                `${basePaths.srcClient}/themes/*.js`,
+                `${basePaths.srcClient}/themes/**/*.js`
+            ],
+            css: [
+                `${basePaths.srcClient}/themes/*.scss`,
+                `${basePaths.srcClient}/themes/**/_*.scss`
+            ]
+        },
+        bundles: [
+            { // main theme (neo/bechtle default)
+                // 'name' is also used as file name later on, so choose a sensible one with valid chars!
+                name: 'neo-bundle',
+                js: {
+                    src: `${basePaths.srcClient}/neo-bundle.js`,
+                    dest: `${basePaths.distPublic}/js`
+                },
+                css: {
+                    src: `${basePaths.srcClient}/neo-app.scss`,
+                    dest: `${basePaths.distPublic}/css`
+                }
+            },
+            { // test theme for concept (replacable/removable)
+                name: 'theme-a',
+                js: {
+                    src: `${basePaths.srcClient}/themes/theme-example.js`,
+                    dest: `${basePaths.distPublic}/themes`
+                },
+                css: {
+                    src: `${basePaths.srcClient}/themes/theme-example.scss`,
+                    dest: `${basePaths.distPublic}/themes`
+                 }
+            }
+        ]
+    },
+
+    // at some point this block might be completely replacable by 'themes', not clear for now.
     scripts: {
         mainSrc: `${basePaths.srcClient}/neo-bundle.js`,
         src: [

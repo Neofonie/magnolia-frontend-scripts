@@ -64,6 +64,7 @@
     "tap-colorize": "^1.2.0",
     "tape": "^4.9.0",
     "through2": "^2.0.3",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "merge-stream": "^1.0.1"
   }
 }

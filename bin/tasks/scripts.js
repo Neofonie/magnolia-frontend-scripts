@@ -11,7 +11,8 @@ const gulp      = require('gulp'),
 const scripts = (done) => {
     flog.info('compile scripts');
 
-    return browserify(config.scripts.mainSrc,
+    var tasks = config.themes.bundles.map(function(theme) {
+        return browserify(theme.js.src,
         {
             debug: global.env.environment !== 'production'
         })
@@ -27,11 +28,14 @@ const scripts = (done) => {
         .bundle().on('error', (error) => {
             handleError(error, done);
         })
-        .pipe(source('neo-bundle.js'))
+        .pipe(source(theme.name + '.js'))
         .pipe(global.env.environment === 'production' ? gulpPlugins.buffer() : noop())
         .pipe(global.env.environment === 'production' ? gulpPlugins.uglify() : noop())
-        .pipe(gulp.dest(config.scripts.dest))
+        .pipe(gulp.dest(theme.js.dest))
         .pipe(reload());
+    });
+
+    return merge(tasks);
 };
 
 module.exports = scripts;
