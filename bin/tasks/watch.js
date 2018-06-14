@@ -15,7 +15,7 @@ const gulp      = require('gulp'),
 
 const watch = (done) => {
     flog.info('start watching');
-    gulp.watch(config.themes.paths.css,     gulp.series(cleanStyles, styles, index, copyMagnoliaWebresources));
+    gulp.watch(config.themes.paths.css,     gulp.series(scsslint, cleanStyles, styles, index, copyMagnoliaWebresources));
     gulp.watch(config.themes.paths.js,      gulp.series(eslint, scripts, copyMagnoliaWebresources));
 
     gulp.watch(config.fonts.src,            gulp.series(copyFonts));

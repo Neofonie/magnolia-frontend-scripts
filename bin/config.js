@@ -1,3 +1,6 @@
+const themeDefbuilder = require('./theme-def-builder'),
+      flog            = require('fancy-log');
+
 const basePaths = {
     root: '.',
     src: 'src',
@@ -7,8 +10,61 @@ const basePaths = {
     distPublic: 'dist/webresources'
 };
 
+// basic configuration for themes. Does include the main theme (changes here can be critical, you
+// should know what you do!)
+const themes = {
+    paths: { // used by watcher
+        js: [
+            `${basePaths.srcClient}/themes/*.js`,
+            `${basePaths.srcClient}/themes/**/*.js`
+        ],
+        css: [
+            `${basePaths.srcClient}/themes/*.scss`,
+            `${basePaths.srcClient}/themes/**/_*.scss`
+        ],
+        // no need for an extra 'print'-section, all done in 'css' already
+    },
+    bundles: [
+        { // main theme
+            // 'name' is also used as file name later on, so choose a sensible one with valid chars!
+            name: 'neo-bundle',
+            js: {
+                src: `${basePaths.srcClient}/neo-bundle.js`,
+                dest: `${basePaths.distPublic}/js`
+            },
+            css: {
+                src_main: `${basePaths.srcClient}/neo-app.scss`,
+                src: [
+                    `${basePaths.srcClient}/styles/global/_variables.scss`,
+                    `${basePaths.srcClient}/styles/global/_mixins.scss`,
+                    `${basePaths.srcClient}/styles/global/_*.scss`,
+                    `${basePaths.srcClient}/styles/vendor/_*.scss`,
+                    `${basePaths.srcClient}/areas/**/_*.scss`,
+                    `${basePaths.srcClient}/components/**/_*.scss`,
+                    `${basePaths.srcClient}/**/_*.scss`
+                ],
+                dest: `${basePaths.distPublic}/css`
+            },
+            print: {
+                src: `${basePaths.srcClient}/neo-print.scss`,
+                dest: `${basePaths.distPublic}/css`
+            }
+        }
+    ]
+}
+
 let projectPaths = require ('../../../.projectrc');
 Object.assign(basePaths, projectPaths);
+
+// fetching a configuration-file that can define further theme-package-definitions.
+// based on this module location the '.themerc' would be somewhere located in
+// 'bechtle-ui\frontend\.themerc' (Bechtle-example)
+let themeConfiguration = require ('../../../.themerc');
+
+// bringing the basic theme together with the other themes
+themes.bundles = themes.bundles.concat(themeConfiguration(themeDefbuilder(basePaths)));
+
+
 
 const config = {
 
@@ -54,43 +110,7 @@ const config = {
         dest: basePaths.distTargetMagnolia
     },
 
-    themes: {
-        paths: { // used by watcher
-            js: [
-                `${basePaths.srcClient}/themes/*.js`,
-                `${basePaths.srcClient}/themes/**/*.js`
-            ],
-            css: [
-                `${basePaths.srcClient}/themes/*.scss`,
-                `${basePaths.srcClient}/themes/**/_*.scss`
-            ]
-        },
-        bundles: [
-            { // main theme (neo/bechtle default)
-                // 'name' is also used as file name later on, so choose a sensible one with valid chars!
-                name: 'neo-bundle',
-                js: {
-                    src: `${basePaths.srcClient}/neo-bundle.js`,
-                    dest: `${basePaths.distPublic}/js`
-                },
-                css: {
-                    src: `${basePaths.srcClient}/neo-app.scss`,
-                    dest: `${basePaths.distPublic}/css`
-                }
-            },
-            { // test theme for concept (replacable/removable)
-                name: 'theme-a',
-                js: {
-                    src: `${basePaths.srcClient}/themes/theme-example.js`,
-                    dest: `${basePaths.distPublic}/themes`
-                },
-                css: {
-                    src: `${basePaths.srcClient}/themes/theme-example.scss`,
-                    dest: `${basePaths.distPublic}/themes`
-                 }
-            }
-        ]
-    },
+    themes,
 
     // at some point this block might be completely replacable by 'themes', not clear for now.
     scripts: {
@@ -100,11 +120,6 @@ const config = {
             `${basePaths.srcClient}/**/*.js`
         ],
         dest: `${basePaths.distPublic}/js`
-    },
-
-    print: {
-        mainSrc: `${basePaths.srcClient}/neo-print.scss`,
-        dest: `${basePaths.distPublic}/css`
     },
 
     server: {
