@@ -1,0 +1,38 @@
+// this should be defined as function as 'basePaths' will be provided by the build system and
+// the configuration may rely on this variable.
+
+const bundles = (basePaths) => {
+    return [
+        { // theme example
+            name: 'theme-example',
+            js: {
+                // the main js, other js-files should be included via this main js
+                src: `${basePaths.srcClient}/themes/theme-example.js`,
+                dest: `${basePaths.distPublic}/themes`
+            },
+            css: {
+                // the main scss, other scss-files should be included via this main scss
+                src_main: `${basePaths.srcClient}/themes/theme-example.scss`,
+
+                // these are some global scss-files that might come in play for most other
+                // themes as well, so they can/should be defined here. These files will be
+                // injected into the 'theme-example.scss' so all content will be available
+                // for other scss-files imported in 'theme-example.scss'.
+                src: [
+                    `${basePaths.srcClient}/styles/global/_variables.scss`,
+                    `${basePaths.srcClient}/styles/global/_mixins.scss`,
+                    `${basePaths.srcClient}/styles/global/_*.scss`,
+                    `${basePaths.srcClient}/styles/vendor/_*.scss`
+                ],
+                dest: `${basePaths.distPublic}/themes`
+            },
+            print: {
+                // the main scss used for print view, other scss-files (related to the print view) should be included via this main scss
+                src: `${basePaths.srcClient}/themes/theme-print-example.scss`,
+                dest: `${basePaths.distPublic}/theme`
+            }
+        }
+    ]
+};
+
+module.exports = bundles;

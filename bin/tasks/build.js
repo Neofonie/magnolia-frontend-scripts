@@ -16,7 +16,15 @@ const build = gulp.series(
     check,
     tests,
     cleanAll,
-    gulp.parallel(styles, print, views, images, svg, copyFonts, server),
+    gulp.parallel(
+        styles,
+        print,
+        views,
+        images,
+        svg,
+        copyFonts,
+        server
+    ),
     scripts,
     index,
     copyMagnoliaWebresources,
