@@ -6,6 +6,7 @@ const basePaths = {
     src: 'src',
     srcClient: 'src/client',
     srcServer: 'src/server',
+    srcThemes: 'src/themes',
     dist: 'dist',
     distPublic: 'dist/webresources'
 };
@@ -15,12 +16,12 @@ const basePaths = {
 const themes = {
     paths: { // used by watcher
         js: [
-            `${basePaths.srcClient}/themes/*.js`,
-            `${basePaths.srcClient}/themes/**/*.js`
+            `${basePaths.srcThemes}/*.js`,
+            `${basePaths.srcThemes}/**/*.js`
         ],
         css: [
-            `${basePaths.srcClient}/themes/*.scss`,
-            `${basePaths.srcClient}/themes/**/_*.scss`
+            `${basePaths.srcThemes}/*.scss`,
+            `${basePaths.srcThemes}/**/_*.scss`
         ],
         // no need for an extra 'print'-section, all done in 'css' already
     },
@@ -62,7 +63,7 @@ Object.assign(basePaths, projectPaths);
 let themeConfiguration = require ('../../../.themerc');
 
 // bringing the basic theme together with the other themes
-themes.bundles = themes.bundles.concat(themeConfiguration(themeDefbuilder(basePaths)));
+themes.bundles = themes.bundles.concat(new themeConfiguration(themeDefbuilder(basePaths)));
 
 
 
