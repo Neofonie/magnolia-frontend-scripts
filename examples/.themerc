@@ -1,38 +1,26 @@
-// this should be defined as function as 'basePaths' will be provided by the build system and
-// the configuration may rely on this variable.
+// this should be defined as function as 'themeDefBuilder' will be provided by the build system.
+// 'themeDefBuilder' can help by automatically generate the complete definition stucture based on
+// a given name for the theme.
 
-const bundles = (basePaths) => {
-    return [
-        { // theme example
-            name: 'theme-example',
-            js: {
-                // the main js, other js-files should be included via this main js
-                src: `${basePaths.srcClient}/themes/theme-example.js`,
-                dest: `${basePaths.distPublic}/themes`
-            },
-            css: {
-                // the main scss, other scss-files should be included via this main scss
-                src_main: `${basePaths.srcClient}/themes/theme-example.scss`,
+class ThemeConfiguration {
+    constructor(themeDefBuilder) {
+        return [
+            // this will rely on the given source-files:
+            // - themes/theme-example.js
+            // - themes/theme-example.scss
+            // - themes/theme-example_print.scss
+            //
+            // it will create the destination-files:
+            // - webresources/themes/theme-example.js
+            // - webresources/themes/theme-example.css
+            // - webresources/themes/theme-example_print.css
+            themeDefBuilder.createThemeDefinitionFor('theme-example')
 
-                // these are some global scss-files that might come in play for most other
-                // themes as well, so they can/should be defined here. These files will be
-                // injected into the 'theme-example.scss' so all content will be available
-                // for other scss-files imported in 'theme-example.scss'.
-                src: [
-                    `${basePaths.srcClient}/styles/global/_variables.scss`,
-                    `${basePaths.srcClient}/styles/global/_mixins.scss`,
-                    `${basePaths.srcClient}/styles/global/_*.scss`,
-                    `${basePaths.srcClient}/styles/vendor/_*.scss`
-                ],
-                dest: `${basePaths.distPublic}/themes`
-            },
-            print: {
-                // the main scss used for print view, other scss-files (related to the print view) should be included via this main scss
-                src: `${basePaths.srcClient}/themes/theme-print-example.scss`,
-                dest: `${basePaths.distPublic}/theme`
-            }
-        }
-    ]
-};
+            // this could be the next theme to be defined and any further theme
+            // can be declared in a same way
+            //,themeDefBuilder.createThemeDefinitionFor('another-theme-example')
+        ]
+    }    
+}
 
-module.exports = bundles;
+module.exports = ThemeConfiguration;
