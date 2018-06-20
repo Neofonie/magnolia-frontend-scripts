@@ -1,7 +1,3 @@
-// this should be defined as function as 'themeDefBuilder' will be provided by the build system.
-// 'themeDefBuilder' can help by automatically generate the complete definition stucture based on
-// a given name for the theme.
-
 class ThemeConfiguration {
     constructor(themeDefBuilder) {
         return [
