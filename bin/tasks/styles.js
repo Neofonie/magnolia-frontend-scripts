@@ -20,17 +20,17 @@ const styles = () => {
     flog.info('compile styles');
 
     var tasks = config.themes.bundles.map(function(theme) {
-        flog.info('\tbuild style ' + theme.css.src + ' => ' + theme.css.dest);
+        flog.info('\tbuild style ' + theme.css.src_main + ' => ' + theme.css.dest);
 
         let orderedStyleFiles = gulp.src(theme.css.src, {allowEmpty: true, read: false})
         .pipe(gulpPlugins.order(theme.css.src, {base: config.basePaths.root}));
-    
 
         return gulp.src(theme.css.src_main, {allowEmpty: true})
             .pipe(gulpPlugins.inject(orderedStyleFiles, {
                 starttag: '// inject:{{ext}}',
                 endtag: '// endinject',
                 transform: function (filepath) {
+                    flog.info('\tinject '+filepath+' into '+theme.css.src_main);
                     filepath = filepath.replace('_', '');
                     return '@import "' + filepath + '";';
                 },
