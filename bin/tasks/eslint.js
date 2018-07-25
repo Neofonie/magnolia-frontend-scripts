@@ -7,11 +7,14 @@ const gulp      = require('gulp'),
 const eslint = () => {
     flog.info('lint scripts');
 
-    var tasks = config.themes.bundles.map(function(theme) {
+    let tasks = config.themes.bundles.map(function(theme) {
         flog.info('\tlint script ' + theme.js.src);
 
         return gulp.src(theme.js.src)
-            .pipe(gulpPlugins.eslint())
+            .pipe(gulpPlugins.eslint({
+                    'extends': 'neofonie'
+                }
+            ))
             .pipe(gulpPlugins.eslint.format());
     });
 

@@ -37,6 +37,8 @@
     "browser-sync": "^2.26.3",
     "browserify": "^16.2.3",
     "del": "^3.0.0",
+    "eslint": "^5.2.0",
+    "eslint-config-neofonie": "^1.0.2",
     "express": "^4.16.4",
     "fancy-log": "^1.3.3",
     "gulp": "^4.0.0",
