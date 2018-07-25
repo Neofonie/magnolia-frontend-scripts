@@ -10,14 +10,14 @@ const gulp      = require('gulp'),
     merge       = require('merge-stream');
 
 const scripts = (done) => {
-    flog.info('compile scripts');
+    flog.info('compile scripts (DEBUG)');
 
     var tasks = config.themes.bundles.map(function(theme) {
         flog.info('\tbuild script ' + theme.js.src + ' => ' + theme.js.dest);
 
         return browserify(theme.js.src,
             {
-                debug: global.env.environment !== 'production'
+                debug: true //global.env.environment !== 'production'
             })
             .transform(babelify)
             .transform(stringify, {
