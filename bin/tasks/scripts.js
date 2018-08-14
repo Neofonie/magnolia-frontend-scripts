@@ -10,7 +10,7 @@ const gulp      = require('gulp'),
     merge       = require('merge-stream');
 
 const scripts = (done) => {
-    flog.info('compile scripts (DEBUG)');
+    flog.info('compile scripts');
 
     var tasks = config.themes.bundles.map(function(theme) {
         flog.info('\tbuild script ' + theme.js.src + ' => ' + theme.js.dest);
