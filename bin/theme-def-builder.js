@@ -19,7 +19,7 @@ const themeDefBuilder = (basePath) => {
                 },
                 css: {
                     // the main scss, other scss-files should be included via the main scss
-                    src_main: `${basePath.srcThemes}/themes/` + themeName + `.scss`,
+                    src_main: `${basePath.srcThemes}/` + themeName + `.scss`,
     
                     // these are some global scss-files that might come in play for most other
                     // themes as well, so they can/should be defined here
