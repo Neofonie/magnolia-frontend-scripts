@@ -1,7 +1,6 @@
 const del   = require('del'),
     config  = require('../config'),
-    flog    = require('fancy-log'),
-    merge   = require('merge-stream');
+    flog    = require('fancy-log');
 
 const cleanAll = () => {
     flog.info('clean all');
@@ -11,13 +10,15 @@ const cleanAll = () => {
 const cleanStyles = () => {
     flog.info('clean styles');
 
+    var sources = [];
+
     var tasks = config.themes.bundles.map(function(theme) {
         flog.info('\tclean style ' + theme.css.dest);
 
-        return del([theme.css.dest]);
+        sources.push(theme.css.dest);
     });
 
-    return merge(tasks);
+    return del(sources);
 };
 
 module.exports = { cleanAll, cleanStyles };
