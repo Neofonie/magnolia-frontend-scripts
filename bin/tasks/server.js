@@ -10,7 +10,7 @@ const server = () => {
 
     return gulp
         .src(config.server.src)
-        .pipe(gulpBabel())
+        // .pipe(gulpBabel())
         .pipe(gulp.dest(config.server.dest))
         .pipe(reload());
 };
