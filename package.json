@@ -1,6 +1,6 @@
 {
   "name": "magnolia-frontend-scripts",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "collection of gulp-scripts for building magnolia frontends",
   "license": "MIT",
   "author": "Veeck",
@@ -30,9 +30,10 @@
     ]
   },
   "dependencies": {
+    "@babel/core": "^7.4.0",
     "babel-core": "6.26.3",
     "babel-preset-env": "^1.7.0",
-    "babelify": "8.0.0",
+    "babelify": "^10.0.0",
     "browser-sync": "^2.26.3",
     "browserify": "^16.2.3",
     "del": "^3.0.0",
@@ -60,12 +61,13 @@
     "gulp-uglify": "^3.0.1",
     "hbs": "^4.0.1",
     "hbs-utils": "^0.0.4",
+    "merge-stream": "^1.0.1",
     "minimist": "^1.2.0",
     "stringify": "^5.2.0",
     "tap-colorize": "^1.2.0",
     "tape": "^4.9.1",
     "through2": "^3.0.0",
-    "vinyl-source-stream": "^2.0.0",
-    "merge-stream": "^1.0.1"
-  }
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "devDependencies": {}
 }
