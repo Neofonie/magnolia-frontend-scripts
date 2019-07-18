@@ -52,7 +52,7 @@ const themes = {
             }
         }
     ]
-}
+};
 
 let projectPaths = require ('../../../.projectrc');
 Object.assign(basePaths, projectPaths);
