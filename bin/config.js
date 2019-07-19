@@ -65,15 +65,9 @@ let themeConfiguration = require ('../../../.themerc');
 // bringing the basic theme together with the other themes
 themes.bundles = themes.bundles.concat(new themeConfiguration(themeDefbuilder(basePaths)));
 
-
-
 const config = {
 
     autoprefixer: {
-        browsers: [
-            'last 2 versions',
-            'ie >= 11'
-        ],
         cascade: true
     },
 
