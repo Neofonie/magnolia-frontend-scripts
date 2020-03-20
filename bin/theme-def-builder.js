@@ -7,7 +7,7 @@ const themeDefBuilder = (basePath) => {
         getBasePath: () => {
             return basePath;
         },
-    
+
         createThemeDefinitionFor: (themeName) => {
             flog.info('##### create theme def ' + themeName);
             return {
@@ -20,14 +20,14 @@ const themeDefBuilder = (basePath) => {
                 css: {
                     // the main scss, other scss-files should be included via the main scss
                     src_main: `${basePath.srcThemes}/` + themeName + `.scss`,
-    
+
                     // these are some global scss-files that might come in play for most other
                     // themes as well, so they can/should be defined here
                     src: [
                         `${basePath.srcClient}/styles/global/_variables.scss`,
+                        `${basePath.srcThemes}/` + themeName + `/global/_variables.scss`,
                         `${basePath.srcClient}/styles/global/_mixins.scss`,
                         `${basePath.srcClient}/styles/global/_*.scss`,
-                        `${basePath.srcThemes}/` + themeName + `/global/_variables.scss`,
                         //`${basePath.srcThemes}/` + themeName + `/global/_mixins.scss`,
                         //`${basePath.srcThemes}/` + themeName + `/global/_*.scss`,
                         `${basePath.srcClient}/styles/vendor/_*.scss`,
