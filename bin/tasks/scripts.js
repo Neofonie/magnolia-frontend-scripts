@@ -33,7 +33,34 @@ const scripts = (done) => {
             })
             .pipe(source(theme.name + '.js'))
             .pipe(global.env.environment === 'production' ? gulpPlugins.buffer() : noop())
-            .pipe(global.env.environment === 'production' ? gulpPlugins.uglify() : noop())
+            .pipe(global.env.environment === 'production' ? gulpPlugins.uglify( {
+                "compress": true,
+                "mangle": {
+                    "keep_fnames":        true
+                },
+                "output": {
+                    "ascii_only":         true,
+                    "beautify":           false,
+                    "braces":             false,
+                    "indent_level":       2,
+                    "indent_start":       0,
+                    "inline_script":      true,
+                    "keep_quoted_props":  false,
+                    "max_line_len":       false,
+                    "preamble":           null,
+                    "preserve_line":      false,
+                    "quote_keys":         false,
+                    "quote_style":        1,
+                    "semicolons":         true,
+                    "shebang":            true,
+                    "source_map":         null,
+                    "width":              80,
+                    "wrap_iife":          false,
+                    "comments":           "/^@/",
+                    "ie8":                false,
+                    "webkit":             true
+                }
+            }) : noop())
             .pipe(gulp.dest(theme.js.dest))
             .pipe(reload());
     });
