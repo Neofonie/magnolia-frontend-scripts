@@ -1,5 +1,4 @@
-const themeDefbuilder = require('./theme-def-builder'),
-      flog            = require('fancy-log');
+const themeDefbuilder = require('./theme-def-builder');
 
 const basePaths = {
     root: '.',
@@ -107,7 +106,7 @@ const config = {
 
     themes,
 
-    // at some point this block might be completely replacable by 'themes', not clear for now.
+    // at some point this block might be completely replaceable by 'themes', not clear for now.
     scripts: {
         mainSrc: `${basePaths.srcClient}/neo-bundle.js`,
         src: [
